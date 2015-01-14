@@ -10,7 +10,7 @@ def connect_gridfs_mongodb(hostname=None,db_name=None):
     if not hostname:
         hostname = '127.0.0.1'
     if not db_name:
-        db_name = '127.0.0.1'
+        db_name = 'gridfs_file7'
     mongo = pymongo.MongoClient(hostname, max_pool_size=50, waitQueueMultiple=10)
     mongo_db = mongo[db_name]
     #mongo_db = mongo[db_name]
