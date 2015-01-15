@@ -6,7 +6,8 @@ from bottle import request, response, get, post
 from bottle import static_file, redirect, HTTPResponse
 from bottle import jinja2_view as view
 from PIL import Image
-from pymongo.objectid import ObjectId
+import pymongo
+#from pymongo import ObjectId
 from models import FileF7
 
 PAGE_SIZE = 5
