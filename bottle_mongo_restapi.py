@@ -31,7 +31,7 @@ def put_document():
         abort(400, 'No _id specified')
     try:
         db['documents'].save(entity)
-    except ValidationError as ve:
+    except pymongo.ValidationError as ve:
         abort(400, str(ve))
 
 @route('/documents/:id', method='GET')
