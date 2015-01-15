@@ -1,0 +1,6 @@
+*.git/
+*.pyc
+*_DS_Store
+*.idea
+*.project
+
