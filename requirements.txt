@@ -6,4 +6,4 @@ mongoengine==0.8.7
 Pillow==2.7.0
 pymongo==2.7.2
 requests==2.5.1
-sleepy.mongoose==0.1
+#sleepy.mongoose==0.1
