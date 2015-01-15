@@ -1,0 +1,77 @@
+{% extends "_layouts/base.html" %}
+
+{% comment %}
+{% extends 'base/jbhome.html' %}
+{% endcomment %}
+
+{% block page_title %}
+{% endblock %}
+
+
+{% block content %}
+        Errors: 
+        {% for field, error in form.errors.items %}
+            <ul>
+            <li>{{ error }}</li>
+            </ul>
+        {% empty %}
+            no errors 
+        {% endfor %}
+        <hr/>
+        List of:
+            <form class="" id="myFormSubmit" action="" method="get">
+                <label for="inputajax"></label>
+                <textarea name="input_list" id="inputajax" ></textarea>
+                {% csrf_token %}
+                {{ form.as_ul }}
+                <button type="button">X</button>
+                <input type="submit" value="Submit" />
+            </form>
+            <div id="results"></div>
+
+
+<script>
+$('#myFormSubmit').click(function(e){
+      var inputdata = $('#inputajax');
+      e.preventDefault();
+      alert($('#myField').val());
+
+      $.post('http://prodimages.ny.bluefly.com/api/v1/pmdata/' + inputdata,
+//         $('#myFormSubmit').serialize(),
+         function(data, status, xhr){
+           // do something here with response;
+         });
+});
+</script>
+{##}
+<script>
+    $("button").click(function() {
+        alert($(":input").val());
+    });
+</script>
+{##}
+<script>
+    $("button").click(function() {
+        $.get("/api/v1/pmdata/" + $(":input:first-of-type"))
+                .done(function (data) {
+                    alert("Data Loaded: " + data);
+                });
+    });
+</script>
+{##}
+{#<script>#}
+{#  function showValues() {#}
+{#    var fields;#}
+{#      fields = $(":input").serializeArray();#}
+{#    $( "#results" ).empty();#}
+{#    jQuery.each( fields, function( i, field ) {#}
+{#                                  $( "#results" ).append( field.value + " " );#}
+{#    });#}
+{#  }#}
+{##}
+{#  $( ":checkbox, :radio" ).click( showValues );#}
+{#  $( "select" ).change( showValues );#}
+{#  showValues();#}
+{#</script>#}
+
+{% endblock %}

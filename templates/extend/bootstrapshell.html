@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  {% block page_title %}<title>the bootstrap 2 tester project</title>{% endblock %}
+  {% block css %}
+  {# <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/bootstrap.css"> #}
+  <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/2_bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/2_bootstrap-responsive.css">
+  <link rel="stylesheet" type="text/css" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
+  {# <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/searcher/css/site_stylesheet.css">#}
+  {% endblock %}
+
+</head>
+
+{% block page_class %}home-page{% endblock %}
+<!-- This code is taken from http://twitter.github.com/bootstrap/examples/hero.html -->
+{% block body %}
+
+<body>
+  <!-- The Main wrapper div starts -->
+
+  {% block content %}
+
+  <div class="container">
+    <!-- header content -->
+    <h1><a href="#">Bootstrap Site</a></h1>
+    <!-- Navigation -->
+    <div class="navbar">
+      <div class="navbar-inner">
+        <div class="container">
+          <ul class="nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#">Projects</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Downloads</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+
+
+
+    <!-- Marketing -->
+    
+
+
+
+
+
+
+
+    <!-- Content Sections -->
+    <div class="row">
+      
+
+      <!-- Left Vertical Side Bar -->
+      <div class="span4">
+        <ul class="nav nav-list">
+          <li class="nav-header">Internal NavLinks</li>
+          <li class="active"><a href="#">Home</a></li>
+          <li><a href="#">Our Clients</a></li>
+          <li><a href="#">Our Services</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Contact Us</a></li>
+          <li class="nav-header">Outside Links</li>
+          <li><a href="#">Google</a></li>
+          <li><a href="#">Yahoo!</a></li>
+          <li><a href="#">Bing</a></li>
+          <li><a href="#">Microsoft</a></li>
+          <li><a href="#">Gadgetic World</a></li>
+        </ul>
+      </div>
+    </div>
+
+      
+    <!-- Right side Content Vertical Area -->
+    <!-- Primary Content Section -->
+    <div class="span8">
+      <ul class="nav nav-list">
+        <li class="nav-header">Internal NavLinks</li>
+        <li class="active"><a href="#">Home</a></l>
+      </ul>
+    </div>
+
+    {% block footer %}
+    <!-- Footer Section -->
+    <hr>
+    <div class="row">
+      <div class="span4">
+        <h4 class="muted text-center">Meet Our Clients</h4>
+        <a href="#" class="btn"><i class="icon-user"></i>Our Clients</a>
+      </div>
+      <div class="span4">
+        <h4 class="muted text-center">Know Our Employees</h4>
+        <a href="#" class="btn btn-success">
+        <i class="icon-star icon-white"></i>Our Employees</a>
+      </div>
+      <div class="span4">
+        <h4 class="muted text-center">Reach Us</h4>
+        <a href="#" class="btn btn-info">Contact Us</a>
+      </div>
+      </div>
+      
+        <!-- Copyright Area -->
+        <hr>
+        <div class="footer">
+          <p>&copy; jb_2013</p>
+        </div>
+        <a id="email" href="mailto:?subject=My%20TestDjango&body=" >Email my Location</a>
+
+      </div>
+      {% endblock %}{# end block footer #}
+  </div>  <!-- The Main wrapper div Ends --><!-- Closing Primary class="container" Div -->
+{% endblock %}{# end block content #}
+
+{% block javascript %}
+<!-- Javascript Area -->
+<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<script scr="{{ STATIC_URL }}js/libs/2_bootstrap.min.js"></script>
+<script scr="{{ STATIC_URL }}js/2_bootstrap.js"></script>
+<script>
+$(document).ready(function(){
+$("button").click(function(){
+$("div").slideToggle();
+});
+});
+</script>
+{% endblock %}{# end block javascript #}
+
+</body>
+{% endblock %}{# end block body #}
+
+</html>

@@ -1,0 +1,76 @@
+{% extends "base/jbhome.html" %}
+
+{% comment %}
+{% extends 'base/jbhome.html' %}
+{% endcomment %}
+
+{% block page_title %}jQuery Ajax Example with JSON Response
+{% endblock %}
+
+<script>
+var myArray=[];
+$('#submitButton').click(function(){
+   $('#formAjax textarea').each(function(){
+      var inputTextData = $(this);
+      var k=$('input:first',inputTextData).val();
+      var v=$('input:first',inputTextData).next().val();
+        myArray.push({key:k, value: v});
+
+   });
+});
+</script>
+
+{% block content %}
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+  $(':submit').on('click', function() { // This event fires when a button is clicked
+      var button = $(this).val().serialize();
+      var dataraw = 'colorstyle=' + $('#formAjax:input textarea').val() + '';
+      $.ajax({ // ajax cnx starts
+          url: 'http://prodimages.ny.bluefly/ap1/v1/pmdata/', // JQuery loads http://prodimages.ny.bluefly
+          data: JSON.stringify(dataraw, [ "colorstyle" ], 4), // Send value of the clicked button
+          dataType: 'json', // Choosing a JSON datatype
+          success: function(data) // Variable data contains the data we get from serverside
+          {
+              //$('#results').html(''); // Clear #results div
+              
+              if (button == 'All') { // If clicked buttons value is All, we post every style
+                  for (var i in data.objects) {
+                      $('#results').append('Valid Url: ' + data.objects[i] + '<br/>');
+                  }
+                  for (var i in data.objects) {
+                      $('#results').append('Invalid Url: ' + data.objects[i] + '<br/>');
+                  }
+              }
+              else if (button == 'Valid') { // If clicked buttons value is Valid, we post only Valid results
+                  for (var i in data.objects) {
+                      $('#results').append('Valid Url: ' + data.objects[i] + '<br/>');
+                  }
+              }
+              else if (button == 'Invalid') { // If clicked buttons value is Invalid, we post only Invalid results
+                  for (var i in data) {
+                      $('#results').append('<li>Invalid Url: ' + data[i] + '<br/></li>');
+                  }
+              }
+          }
+      });
+      return false; // keeps the page from not refreshing 
+  });
+});
+</script>
+
+<!-- Write HTML Content code here -->
+
+<body>
+  <form id="formAjax">
+      <button value="All" type="submit">Get All Urls!</button>
+      <button value="Valid" type="submit">Get Valid Urls!</button>
+      <button value="Invalid" type="submit">Get Invalid Urls!</button>
+      <textarea name="colorstyle" id="id-inputColorstyle"></textarea>
+  </form>
+  
+  <div id="results">
+  <!-- Javascript will print data in here when we have finished the page -->
+  </div>
+{% endblock %}

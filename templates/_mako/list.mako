@@ -1,4 +1,4 @@
-<%inherit file="base.html"/>
+<%inherit file="base.mako"/>
 
 <%!
 title = 'Bottled GridFS Admin'
@@ -16,17 +16,14 @@ ${self.footer()}
 <form action="/create" method="POST" enctype="multipart/form-data">
     <table>
         <tr>
-            <td>Comments:</td>
-            <td><textarea rows="3" name="text"></textarea></td>
+            <td>Name:</td>
+            <td><input type="text" name="filename" /></td>
         </tr>
         <tr>
             <td>FileUpload:</td>
             <td><input type="file" name="inputFile" /></td>
         </tr>
-        <tr>
-            <td>Name:</td>
-            <td><input type="text" name="filename" /></td>
-        </tr>
+
         <tr>
             <td>Image:</td>
             <td>
@@ -34,10 +31,13 @@ ${self.footer()}
             </td>
         </tr>
         <tr>
-            <td></td>
+            <td>Comments:</td>
+            <td><textarea rows="3" name="text"></textarea></td>
+        </tr>
+        <tr>
             <td>
                 <input type="submit" value="Create New File" onclick="toggle('spinner');">
-                <img src="/static/images/spinner.gif" id="spinner" style="display: none;">
+                <img src="/static/images/spinner.gif" id="spinner" style="display: inline-table;">
             </td>
         </tr>
     </table>

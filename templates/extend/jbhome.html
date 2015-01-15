@@ -1,0 +1,431 @@
+{% extends "_layouts/base.html" %}
+{% comment %}
+{% load django-bootstrap-toolkit %}
+{% endcomment %}
+{% block page_title %}Flim Flam Dam{% endblock %}
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+{#<script src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.2/html5shiv.js"></script>#}
+{#<script src="http://cdnjs.cloudflare.com/ajax/libs/respond.js/1.2.0/respond.js"></script>#}
+
+<!-- Site Favicon -->
+<link rel="shortcut icon" href="{{ STATIC_URL }}ico/favicon.ico">
+
+{#{% block css %}#}
+{#<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/navbar.css">#}
+{#<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/navbar-fixed-top.css">#}
+{#<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/bootstrap.css">#}
+{#<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/bootstrap.min.css">#}
+{#<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/app.css">#}
+{#<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/searcher/css/site_stylesheet.css">#}
+{#{% endblock %}#}
+
+{% block page_class %}home-page{% endblock %}
+
+{% block content %}
+
+    <!-- Main hero unit, renamed jumbotron, for a primary marketing message or call to action -->
+    {#<div class="container-fluid"> #}
+    {% block jumbotron %}
+    <div class="container">
+        <div class="jumbotron" style="background:rgba(2, 111, 57, 0.82); color: rgb(224, 210, 131)">
+            <h1>Motowns Hitmaker is Back!</h1>
+            <p>
+                See below for fewer, yet stunningly more relevant reports and links. Unexpectedly there is a basic search function in the middle,
+                but what you may have also missed is the sleek buttons dressed in your favorite primary colors begging you to browse whats come out of our studio
+                recently. Live it up. Explore...and don't be alarmed if some link or button doesn't work, this site is still as beta as ß can be.
+            </p>
+
+            <p>
+                <a href="http://en.wikipedia.org/wiki/Beta" class="btn btn-sm" style="background:rgba(45, 50, 105, 0.46); color: rgb(224, 210, 131)">Learn more &raquo;</a>
+            </p>
+            <!--open dated queries group container -->
+            <div class="container">
+            <!--open dated queries links container and row divs -->
+            <div class="container"><div class="row">
+            <p>
+                <div class="col-sm-2 col-md-2">
+                <a href="searcher/yesterday-still-selects" class="btn btn-md" style="background: rgba(45, 50, 125, 0.82);color: rgba(219,235,252, 1.00)"><span class="glyphicon glyphicon-heart-empty" style="color: rgba(216, 16, 64, 0.99)"></span> Yesterdays Still Selects</a>
+                </div>
+                <div class="col-sm-offset-3 col-md-offset-3">
+                <a href="searcher/weeks-still-selects" class="btn btn-sm" style="background: rgba(45, 50, 125, 0.82);color: rgba(5, 217, 35, 0.98)"><span class="glyphicon glyphicon-time"></span> Current Weeks Still Selects</a>
+                </div>
+                <div class="col-sm-offset-3 col-md-offset-3">
+                <a href="searcher/lastweeks-still-selects" class="btn btn-sm" style="background: rgba(45, 50, 125, 0.82);color: rgba(5, 217, 35, 0.98)"><span class="glyphicon glyphicon-fast-forward"></span> Last Weeks Still Selects</a>
+                </div>
+            </p>
+            </div></div>
+            <!--close dated queries links row and container divs still -->
+            <!--open dated queries links row div-->
+            <div class="container"><div class="row">
+            <p>
+                <div class="col-sm-2 col-md-2">
+                <a href="searcher/yesterday-looklet-selects" class="btn btn-md" style="background: rgba(45, 50, 125, 0.82);color: rgba(219,235,252, 1.00)"><span class="glyphicon glyphicon-heart" style="color: rgba(216, 16, 64, 0.99)"></span> Yesterdays Looklet Selects</a>
+                </div>
+                <div class="col-sm-offset-3 col-md-offset-3">
+                <a href="searcher/weeks-looklet-selects" class="btn btn-sm" style="background: rgba(45, 50, 125, 0.82);color: rgba(5, 217, 35, 0.98)"><span class="glyphicon glyphicon-time"></span> Current Weeks Looklet Selects</a>
+                </div>
+                <div class="col-sm-offset-3 col-md-offset-3">
+                <a href="searcher/lastweeks-looklet-selects" class="btn btn-sm" style="background: rgba(45, 50, 125, 0.82);color: rgba(5, 217, 35, 0.98)"><span class="glyphicon glyphicon-fast-forward"></span> Last Weeks Looklet Selects</a>
+                </div>
+            </p>
+            </div></div>
+            <!--close dated queries links row and container divs looklet -->
+            <!--open Today query link row and container divs All
+            <div class="container"><div class="row">-->
+            <div class="col-sm-2 col-md-2">
+            <a href="searcher/today-all-selects" class="btn btn-md" style="background: rgba(129, 0, 152, 0.58);color: rgb(224, 210, 131)"><span class="glyphicon glyphicon-calendar" style="color: rgba(216, 143, 6, 0.99)"></span> Shots Received Today</a>
+            </div>
+            <!--</div></div>-->
+            <!--close Today query link row and container divs All -->
+            </div>
+            <!-- END close ALL queries links row and container divs END -->
+{% comment %}
+            <p>
+                <a href="searcher/postreadyorig/2013/11/19/" class="btn btn-danger btn-sm"> ArchiveDayView<N/a>
+                <a href="searcher/postreadyorig/2013/week/47/" class="btn btn-warning btn-sm"> ArchiveWeekView</a>
+                <a href="searcher/postreadyorig/2014/FEB/" class="btn btn-primary btn-sm"> ArchiveMonthView</a>
+            </p>
+
+            <p>
+                <a href="searcher/excel/input/" class="btn btn-success btn-sm"> Submit Styles Get Excel for Tool</a>
+                <a href="searcher/excel/import/" class="btn btn-success btn-sm"> Import Excel for Tool</a>
+                <a href="searcher/excel/list/" class="btn btn-success btn-sm"> List Document Test</a>
+            </p>
+
+            <p>
+                <a href="searcher/excel/upload/" class="btn btn-danger btn-lg"> Upload Excel File</a>
+            </p>
+
+            <p>
+                <a href="searcher/excel/output/" class="btn btn-primary btn-sm"> View Excel for Tool</a>
+                <a href="searcher/excel/export/" class="btn btn-primary btn-sm"> Export Excel for Tool</a>
+                <a href="searcher/excel/download/" class="btn btn-primary btn-sm"> Download Excel for Tool</a>
+            </p>
+{% endcomment %}
+
+        </div>
+    </div>
+    <!-- end silly named marketing message jumbotron, just inherit it away to a better place -->
+    {% endblock %}
+    <!--<li><a href="http://prodimages.ny.bluefly.com:8082/siteshome/Reports/event_incomplete_14days.html">The Lavender Report</a></li> -->
+
+    <!-- Example row of columns MIDDLE ROW Begin -->
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3 col-md-3">
+                <!-- Button trigger modal -->
+                <button class="btn btn-primary btn-md" data-toggle="modal" data-target="#myModal">View Images Received By Date
+                </button>
+                <!-- Modal -->
+                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                     aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal"
+                                        aria-hidden="true">&times; </button>
+                                <a><h3 class="modal-title" id="myModalLabel" style="font-family: DejaVu Serif, serif">
+                                    <span class="glyphicon glyphicon-globe"></span> Received from Looklet and Still Sets </h3></a>
+                                {# block modal_body %}{% endblock #}
+                            </div>
+                            <div class="modal-body">
+                                <a><h3 style="font-family: DejaVu Serif, serif"><span
+                                        class="glyphicon glyphicon-bullhorn"></span> Select Date </h3></a>
+                                {# block modal_body %} {% endblock #}
+                                <form class="navbar-form navbar-right" enctype="multipart/form-data" method="POST"
+                                      action="searcher/findall/outtakes">
+                                    {% csrf_token %}
+                                    <div class="form-group" style="width: 150px;">
+                                        {# <input type="text" class="form-control" name="colorstyle" id="colorstyle" placeholder="Search"> #}
+                                        <input type="datetime" class="form-control" name="searchquery" id="datepicker">
+                                    </div>
+                                    <button type="submit" class="btn btn-primary" name="submit" id="submit"><span
+                                            class="glyphicon glyphicon-search"></span> Search
+                                    </button>
+                                </form>
+
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-warning">Save changes</button>
+                                <button type="submit" class="btn btn-success">Submit</button>
+                            </div>
+                        </div>
+                        <!-- /.modal-content -->
+                    </div>
+                    <!-- /.modal-dialog -->
+                </div>
+                <!-- /.modal Fade and End-->
+            </div>
+            <!-- /.col End -->
+
+            <!--<a href="searcher/ajax/search_form/" class="btn btn-primary btn-sm"> search form</a>-->
+
+        <div class="col-sm-6 col-md-6">
+            <h2>Quick Style Search</h2>
+
+            <form role="searchall" enctype="multipart/form-data" class="navbar-form" method="POST" id="tweak_search_new"
+                  action="/searcher/findall">
+                {% csrf_token %}
+                <div class="col-sm-12 col-md-12">
+                    <input class="form-control" type="text" id="searchquery" name="searchquery" maxlength="100"
+                           placeholder="Enter Search"/>
+                    <button id="submit" type="submit" class="btn btn-warning" name="submit"><span
+                            class="glyphicon glyphicon-search"></span> Search Now!!!
+                    </button>
+                </div>
+            </form>
+
+        </div>
+
+
+    <div class="col-sm-3 col-md-3">
+        <!-- Button trigger modal -->
+        <button class="btn btn-success btn-md" data-toggle="modal" data-target="#myModalText">Do Alot with a List</button>
+        <!-- Modal -->
+        <div class="modal fade" id="myModalText" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+             aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times; </button>
+                        <a><h3 class="modal-title" id="myModalLabel" style="font-family: DejaVu Serif, serif"><span
+                                class="glyphicon glyphicon-globe"></span> A Place to Run Some Black Magick </h3></a>
+                        {# block modal_body %}{% endblock #}
+                    </div>
+                    <div class="row">
+                    <div class="col-sm-12 col-md-12">
+                    <div class="modal-body">
+                        <a><h3 style="font-family: DejaVu Serif, serif"><span
+                                class="glyphicon glyphicon-road"></span> Enter Styles And Choose A Function </h3>
+                        </a>
+                        {# block modal_body %} {% endblock #}
+                        <div class="row">
+                        <div class="col-sm-12 col-md-12">
+                        <form class="navbar-form" id="script_run_form" enctype="multipart/form-data" method="GET" action="/searcher/runscripts/script_runner_home/">
+                            {% csrf_token %}
+
+                            <div class="form-group form-horizontal">
+                                {# <input type="text" class="form-control" name="colorstyle" id="colorstyle" placeholder="Search"> #}
+                                <input type="hidden" name="ajaxresponse" id="ajaxresponse">
+                                <input type="text" placeholder="Enter Style List or PO or URL" style="box-sizing:border-box" class="form-control" name="input_list">
+                                        <div class="script-result"></div><div class="spinner"></div>
+                                        <div class="list-group">
+                                            <label for="multiselect">
+                                            ScriptSelection
+                                            </label>
+                                        <select name="script_name" multiple="multiple" id="multiselect">
+                                            <option class="list-group-item list-group-item-success" value="newAll_Sites_CacheClear.py"  selected=selected>
+                                                Clear Cache using Delimited List - Preferably Space Delimited
+                                            </option>
+                                            <option class="list-group-item list-group-item-success" value="download_server_imgs_byPOorStyleList.py">
+                                                Download Images from Server - Enter PO or Style List
+                                            </option>
+                                            <option class="list-group-item list-group-item-success" value="meckPM_localLoginSave.py">
+                                                Resave a List of Styles to Validate Completion
+                                            </option>
+                                            <option  class="list-group-item list-group-item-success" value="bfly_listpage_scrape_clear.py">
+                                                Clear Cache from Live Site Pages - Enter URL
+                                            </option>
+                                            <option  class="list-group-item list-group-item-success" value="bflyurl_scrape_return_styles_only.py">
+                                                List Styles on Live Site Pages - Enter URL
+                                            </option>
+                                            <option value=""></option>
+                                        </select>
+                                        </div>
+
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-sm" name="submit" id="submit"><span
+                                    class="glyphicon glyphicon-exclamation-sign"></span> Run Script
+                            </button>
+
+                        </form>
+                        </div>
+                        </div>
+                        </div>
+                        </div>
+                        </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+{#                        <button type="submit" class="btn btn-primary btn-sm" name="submitAjax" id="submitAjax">ajax</button>#}
+                        {#  <span class="glyphicon glyphicon-exclamation-sign"></span> Run Script</button> #}
+                        {#<button type="button" class="btn btn-warning">Save changes</button>#}
+                        {#<button type="submit" class="btn btn-success">Submit</button>#}
+                    </div>
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </div><!-- /.modal End -->
+        <!-- /.modal Fade -->
+
+        {% comment %}
+        <form action="/make_select/" method="post">{% csrf_token %}
+          {{ form.as_p }}
+          <input type="submit" value="Submit" />
+        </form>
+        {% endcomment %}
+
+        </div><!-- Closes LAST modal col in middle-main row  -->
+        </div><!-- Closes Primary Middle Content Row  -->
+    </div><!-- Closes Primary Middle Content CONTAINER -->
+    <!--Closed Main Container -->
+
+<!-- Footer Section -->
+
+{% comment %}
+{% block footer %}
+{% endcomment %}
+
+    <footer>
+        <div class="container">
+            <div class="row">
+{#                #}
+{#                <div class="col-md-1">#}
+{#                    <iframe src="/api/v1/" title="Endpoints" scrolling="yes">#}
+{##}
+{#                    </iframe>#}
+{#                </div>#}
+                 <div class="col-md-2"></div>
+{#                <div class="col-md-2">{% include "searcher/modal/modal_multi_input_form.html" %}</div>#}
+                <div class="col-md-8">
+                    <ul class="nav nav-pills nav-stacked">
+                        <li class="active"><a href="http://pm.bluefly.corp">PM</a></li>
+                        <li><a href="http://clearcache.bluefly.corp">ClearCache</a></li>
+                        <li><a href="http://tools.l3.bluefly.com">theTool</a></li>
+                        <li><a href="http://prodimages.ny.bluefly.com:8082/phpmyadmin">phpMyAdmin</a>
+                        </li>
+                        <li class="active" style="color: black">
+                            <div class="container">
+                                <div class="row">
+                                <div class="col-md-6 col-lg-12">
+                                    <!-- Button trigger modal -->
+
+                                    <button class="btn btn-primary btn-md"  style="position: relative; color: black; justify-content: center; background-color: lavender; background: lavender" href="http://prodimages.ny.bluefly.com:8082/siteshome/Reports/event_incomplete_14days.html" data-toggle="modal" data-target="#myModalLavender">
+                                        The Lavender Report
+                                    </button>
+                                    <!-- Modal -->
+                                    <div class="modal" id="myModalLavender" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal"
+                                                            aria-hidden="true">&times; </button>
+                                                    <a><h3 class="modal-title" id="myModalLabel" style="font-family: DejaVu Serif, serif">
+                                                        <span class="glyphicon glyphicon-globe"></span> Browsing The Lavender Report... </h3></a>
+                                                </div>
+                                                <div class="modal-body">
+
+                                                    <form class="navbar-form navbar-right" enctype="multipart/form-data" method="GET" action="#">
+                                                        {% csrf_token %}
+                                                        <button type="reset" class="btn btn-primary" name="reset" id="reset"><span
+                                                                class="glyphicon glyphicon-refresh"></span> Reload
+                                                        </button>
+                                                    </form>
+
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                                    <button type="button" class="btn btn-warning">Save changes</button>
+                                                    <button type="submit" class="btn btn-success">Submit</button>
+                                                </div>
+                                            </div>
+                                            <!-- /.modal-content -->
+                                        </div>
+                                        <!-- /.modal-dialog -->
+                                    </div>
+                                    <!-- /.modal Fade and End-->
+                                </div> <!-- Close Col sm6 md12 -->
+                            </div> <!-- Close Row -->
+                            </div> <!-- Close Container -->
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-2">
+                    <h3 class="text-right">Something Else</h3>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    {% comment %}
+{% endblock %}
+{% endcomment %}
+
+<!-- Javascript -->
+{% block js %}{% endblock %}
+{#  <script src="{{ STATIC_URL }}js/libs/jquery-1.9.1.min.js"></script>#}
+{#  <script src="{{ STATIC_URL }}js/bootstrap.js"></script>#}
+{#  <script src="{{ STATIC_URL }}js/libs/bootstrap.min.js"></script>#}
+{#  <script src="{{ STATIC_URL }}js/plugins.js"></script>#}
+<script src="{{ STATIC_URL }}js/home.js"></script>
+<script src="{{ STATIC_URL }}js/ajaxfuncs.js"></script>
+<script src="{{ STATIC_URL }}js/common.js"></script>
+
+<!-- jQ anchors load to middle search -->
+{#<script>#}
+{#$(document.body).animate({#}
+{#    'scrollTop': $('#tweak_search_new').offset().top#}
+{# }, 2000);#}
+{#</script>#}
+{##}
+{#<!-- Alt for ffox support jQ anchors load to middle search -->#}
+{#<script>#}
+{#(function($) {#}
+{#    $(document).ready(function() {#}
+{#         $('html, body').animate({#}
+{#           'scrollTop': $('#tweak_search_new').offset().top#}
+{#         }, 2000);#}
+{#    });#}
+{# })(jQuery);#}
+{#</script>#}
+
+{##}
+{#<script>#}
+{#      $('#daterange-container').find('.input-daterange').datepicker({#}
+{#          todayBtn: true,#}
+{#          orientation: "auto center",#}
+{#          todayHighlight: true#}
+{#      });#}
+{#</script>#}
+{#{% comment %}#}
+{##}
+{#<script>#}
+{#// prepare Options Object#}
+{#      var options;#}
+{#          options = {#}
+{#          target: '#divToUpdate',#}
+{#          url: '/admin/',#}
+{#          success: function () {#}
+{#          alert('Thanks for your comment!');#}
+{#      }#}
+{#      };#}
+{#// pass options to ajaxForm#}
+{#{% comment %}#}
+{##}
+{#      // $('#myForm').ajaxForm(options);#}
+{##}
+{#</script>#}
+{#{% endcomment %}#}
+{##}
+{##}
+{#<script>#}
+{#$( "#datepicker" ).datepicker();#}
+{#</script>#}
+{##}
+{#<script>#}
+{#    var i = document.createElement("input");#}
+{#    i.setAttribute("type", "date");#}
+{#        if (i.type == "text") {#}
+{#          $( "#datepicker" ).datepicker();#}
+{#        // No native date picker support :(#}
+{#        // Use Dojo/jQueryUI/YUI/Closure to create one,#}
+{#        // then dynamically replace that <input> element.#}
+{#        }#}
+{#</script>#}
+{#<script>#}
+{#$('form #checkbox').is(':checked');#}
+{#</script>#}
+{#{% endblock js %}#}
+
+{% endblock %}

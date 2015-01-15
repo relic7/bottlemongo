@@ -14,7 +14,7 @@ from models import FileF7
 PAGE_SIZE = 5
 
 @get(['/', '/list', '/list/:page#\d+#'])
-@view('templates/list.html')
+@view('templates/base/list.mako')
 def list(page=0):
     ''' List files. '''
     page = int(page)

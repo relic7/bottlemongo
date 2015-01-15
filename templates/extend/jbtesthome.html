@@ -1,0 +1,329 @@
+{% extends "_layouts/base.html" %}
+
+{% block css %}
+{{block.super}}
+<style>
+/* Move down content because we have a fixed navbar that is 50px tall */
+body {
+  padding-top: 50px;
+  padding-bottom: 20px;
+}
+</style>
+{% endblock css %}
+{#{% block css %}#}
+    {# <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/bootstrap.css"> #}
+{#    <link rel="stylesheet" type="text/css" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">#}
+    {# <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/searcher/css/site_stylesheet.css">#}
+{#{% endblock %}#}
+
+{% block page_title %}Flim Flam Dam{% endblock %}
+{% block page_class %}home-page{% endblock %}
+{% block content %}
+<!-- This code is taken from http://getbootstrap.com/examples/jumbotron/ -->
+
+            <!-- Fixed navbar -->
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+                      <!-- Open Container -->
+
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar">I1</span>
+                    <span class="icon-bar">I2</span>
+                    <span class="icon-bar">I3</span>
+                </button>
+                <a class="navbar-brand" href="#">Your Home for Photo Info Since the Mid to Late '50s</a>
+            </div>
+            {#  </div>#}
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            {#   <div class="collapse navbar-collapse navbar-ex1-collapse"> #}
+
+
+            {#  <div class="col-sm-6 col-md-6">#}
+        <div class="navbar-collapse collapse">
+          <form class="navbar-form navbar-right">
+            <div class="form-group">
+                    <li class="active"><a href="/"><span class="glyphicon glyphicon-home"></span> Home </a></li>
+                    <li><a href="admin/"><span class="glyphicon glyphicon-user"> Admin </span></a></li>
+                    <li><a href="bootstrapshell/"><span class="glyphicon glyphicon-info-sign">Quickest Search </span></a></li>
+            </div>
+          </form>
+        </div>
+            {#</div>#}
+            {#  action="admin/" method="login" id="admin-login" #}
+            {#            <form id="adminlogin" class="navbar-form pull-right">#}
+            {# <form id="login-form" class="form-signin form-horizontal" method="post" action="admin/login/" autocomplete="off"> #}
+            {% comment %}
+
+         <div class="col-sm-4 col-md-4">
+            <form class="navbar-form navbar-right" role="search">{% csrf_token %}
+              <div class="form-group">
+                <input type="hidden" value="l0XqBBkvCoKoaRrt67oDuHB9p9CoNtKA" name="csrf_token"/>
+                <div class="form-signin-inner">
+{#                   <h3>Login</h3> #}
+                  <div class="control-group">
+                    <div class="control-label">User</div>
+                    <div class="controls">
+                      <input id="id_username" type="text" name="username" maxlength="254" placeholder="Username"/>
+                      <span class="help-inline"></span>
+                    </div>
+                  </div>
+                  <div class="control-group">
+                    <div class="control-label">
+                      <label class="required" for="id_password">Pass </label>
+                    </div>
+                    <div class="controls">
+                      <input id="id_password" type="password" name="password" maxlength="4096" placeholder="DAM Password"/>
+                      <span class="help-inline"></span>
+                    </div>
+                    <input type="hidden" value="1" name="this_is_the_login_form"/>
+                    <input type="hidden" value="/admin/" name="next"/>
+                  </div>
+                </div>
+                {#         <div class="form-actions"> #}
+                {# <input class="btn btn-primary" type="submit" value="Log in"/> #}
+                </div>
+                <button type="submit" class="btn btn-info">Submit</button>
+              </form>
+          </div>
+{% endcomment %}
+
+
+                    {% comment %}
+
+              <ul class="nav navbar-nav navbar-right">
+                <li><a href="admin/"><span class="glyphicon glyphicon-asterisk"></span>AdminAgain</a></li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-star"></span> Actions <b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="#">ClearBC</a></li>
+                    <li><a href="#">ClearBF</a></li>
+                  </ul>
+                </li>
+              </ul>
+
+{% endcomment %}
+
+                </div>
+                <!--/.nav-collapse -->
+            </div><!-- Close Container -->
+            </div>
+            <!--top level nav div close-->
+
+
+
+
+        <!-- Main hero unit, renamed jumbotron, for a primary marketing message or call to action -->
+        {#             <div class="container-fluid"> #}
+    <div class="jumbotron">
+      <div class="container">
+                <h1>Your fancy new searcher!</h1>
+
+                <p>
+                    See below for some helpful reports and links. Obviously there is a basic search function in the
+                    middle,
+                    but what you may have missed is the sleek little dropdown to browse whats come out of our studio
+                    recently. Don't be alarmed if some link or button doesn't work, this site is as beta as ß can be.
+                </p>
+
+                <p><a href="http://en.wikipedia.org/wiki/Beta" class="btn btn-primary btn-sm" role="button">Learn more &raquo;</a></p>
+
+                <p>
+                    <a href="searcher/lastweeks-fashion-selects" class="btn btn-primary btn-sm">Last Weeks Fashion
+                        Selects</a>
+                    <a href="searcher/lastweeks-still-selects" class="btn btn-success btn-sm">Last Weeks Still
+                        Selects</a>
+                    <a href="searcher/weeks-still-selects" class="btn btn-primary btn-sm">This Weeks Still Selects</a>
+                </p>
+
+                <p>
+                    <a href="searcher/postreadyorig/2013/11/19/" class="btn btn-danger btn-sm">ArchiveDayView</a>
+                    <a href="searcher/postreadyorig/2013/week/47/" class="btn btn-warning btn-sm">ArchiveWeekView</a>
+                    <a href="searcher/postreadyorig/2013/12/" class="btn btn-primary btn-sm">ArchiveMonthView</a>
+                    <a href="searcher/postreadyorig/2013/" class="btn btn-primary btn-sm">ArchiveYearView</a>
+                </p>
+            </div>
+        </div>
+        <!-- end marketing message -->
+    <div class="container">
+        <!-- Example row of columns MIDDLE ROW Begin -->
+        <div class="row">
+            <div class="col-sm-4 col-md-4">
+                <div class="navbar-collapse collapse">
+                    <ul class="nav">
+                        <h2>Belle &amp; Clive Event Info</h2>
+                        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown-menu">Choose Your
+                            Report <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="http://prodimages.ny.bluefly.com:8082/siteshome/Reports/event_incomplete_14days.html">The
+                                    Lavender Report</a></li>
+                            <li class="divider">Something to Look Forward to</li>
+                            <li>
+                                <a href="http://prodimages.ny.bluefly.com:8082/siteshome/Reports/event_progress_14days.html">Full
+                                    Upcoming Event's Statuses</a></li>
+                        </ul>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-6">
+                <h2>Quick Style Search</h2>
+                <form role="form" class="navbar-form" method="get" id="tweak_search" action="/searcher/">
+                    <p><input class="form-control" type="text" id="searchtext" maxlength="100" placeholder="Enter Search"/></p>
+                    <p><input id="submit" name="submit" type="submit"/></p>
+                </form>
+                <a href="#" class="dropdown-toggle" data-toggle=".dropdown-menu">Search Type<b class="caret"></b></a>
+            </div>
+            <div class="col-sm-4 col-md-4">
+                <ul class="dropdown-menu pull-right dropdown-features">
+                    <div id="searchchoice" class="btn-group-sm" data-toggle="buttons">
+                        <div class="col-sm-3">
+                            <label class="btn btn-default">
+                                <input type="radio" name="searchtype" id="colorstyle">Colorstyle</label>
+                        </div>
+                        <div class="col-sm-3">
+                            <label class="btn btn-default">
+                                <input type="radio" name="searchtype" id="date">Date Search</label>
+                        </div>
+                        <div class="col-sm-3">
+                            <label class="btn btn-default">
+                                <input type="radio" name="searchtype" id="brand">Brand</label>
+                        </div>
+                        <div class="col-sm-3">
+                            <label class="btn btn-default">
+                                <input type="radio" name="searchtype" id="keyword">Keyword</label>
+                        </div>
+                    </div>
+                </ul>
+            </div>
+            {% comment %}
+                  <a href="#daterange-container" role="button" class="btn btn-default" data-toggle=".modal">Launch demo modal</a>
+                </div>
+                {# bootstrap_form form layout="vertical" #}
+                {% endcomment %}
+            <div class="col-sm-4 col-md-4">
+                {% include "include/dropdown_generic.html" %}
+                <form id="myForm1" name="otherdatesearchform" method="get">
+                    <div class="input-daterange" id="daterange-container" data-date-format="yy/mm/dd">
+                        <input type="date" id="datepicker" name="startdate" maxlength="10"/>
+                        <span class="input-group-addon" display="inline">to</span>
+                        <input type="date" id="datepicker" name="enddate" maxlength="10"/>
+                        <input id="submit" name="submit" type="submit">
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6 col-md-6">
+                <form id="myForm1" name="bottomsearch" method="get">
+                    {#        <button type="submit" id="searchdate">#}
+                    <input type="date" id="startdate" name="startdate" maxlength="10"/>
+                    <input id="submit" name="submit" type="submit">
+                    <input type="date" id="output1" name="startdate" maxlength="10"/>
+                    {#        </button>#}
+                </form>
+            </div>
+        </div>
+
+        <div class="col-sm-6 col-md-6">
+            <!-- Button trigger modal -->
+            <button class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Launch demo modal</button>
+            <!-- Modal -->
+            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                 aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal"
+                                    aria-hidden="true">&times; </button>
+                            <h4 class="modal-title" id="myModalLabel">{# block modal_body %}{% endblock #}</h4>
+                        </div>
+                        <div class="modal-body">
+                            {# block modal_body %} {% endblock #}
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-success">Save changes</button>
+                        </div>
+                    </div>
+                    <!-- /.modal-content -->
+                </div>
+                <!-- /.modal-dialog -->
+            </div>
+            <!-- /.modal -->
+            {% comment %}
+        <form action="/make_select/" method="post">{% csrf_token %}
+          {{ form.as_p }}
+          <input type="submit" value="Submit" />
+        </form>
+  {% endcomment %}
+        </div>
+    </div><!-- Closes Primary Middle Content Row -->
+</div><!-- Closed Main Container -->{#   CLOSED CONTAINER#}
+
+<!-- Footer Section -->
+{% block footer %}
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">&copy; jb-bfly_2013</div>
+            <div class="col-md-4">
+                <ul class="nav nav-pills">
+                    <li class="active"><a href="http://pm.bluefly.corp">PM</a></li>
+                    <li><a href="http://clearcache.bluefly.corp">ClearCache</a></li>
+                    <li><a href="http://tools.l3.bluefly.com">theTool</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <h3 class="text-right">Something Else</h3>
+            </div>
+        </div>
+    </div>
+</footer>
+{% endblock %}
+
+<!-- Javascript -->
+<script>
+    $('#daterange-container').find('.input-daterange').datepicker({
+        todayBtn: true,
+        orientation: "auto center",
+        todayHighlight: true
+    });
+</script>
+{% comment %}
+
+<script>
+// prepare Options Object
+      var options;
+          options = {
+          target: '#divToUpdate',
+          url: '/admin/',
+          success: function () {
+          alert('Thanks for your comment!');
+      }
+      };
+// pass options to ajaxForm
+{% comment %}
+
+      // $('#myForm').ajaxForm(options);
+
+</script>
+{% endcomment %}
+
+{% block js %}
+    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+    <script>
+        var i = document.createElement("input");
+        i.setAttribute("type", "date");
+        if (i.type == "text") {
+            // No native date picker support :(
+            // Use Dojo/jQueryUI/YUI/Closure to create one,
+            // then dynamically replace that <input> element.
+        }
+    </script>
+{% endblock %}
+
+{% endblock %}
+
