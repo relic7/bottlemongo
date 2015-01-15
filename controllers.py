@@ -60,12 +60,14 @@ def create():
     filef7.fs.files.save()
     redirect('/')
 
+
 @get('/:image_type#(image|thumb)#/:filename')
 def get_image(image_type, filename):
     ''' Send image or thumbnail from file stored in the database. '''
     f = FileF7.objects.with_id(ObjectId(filename))[image_type]
     response.content_type = f.content_type
     return HTTPResponse(f)
+
 
 @get('/static/:filename#.+#')
 def get_static_file(filename):
