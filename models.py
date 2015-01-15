@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 import datetime
-from mongoengine import Document, connect
+from mongoengine import Document, connect, register_connection
 from mongoengine import StringField, DateTimeField, FileField
 
 DB_NAME = 'gridfs_file7'
@@ -13,4 +13,5 @@ class FileF7(Document):
     image = FileField()
     thumb = FileField()
 
-connect(db=DB_NAME,collection='fs.files')
+#connect(db=DB_NAME,collection='fs.files')
+register_connection(conn, name=DB_NAME, collection='fs.files', username='mongo', password='mongo')
