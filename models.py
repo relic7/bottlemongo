@@ -13,4 +13,4 @@ class FileF7(Document):
     image = FileField()
     thumb = FileField()
 
-connect(DB_NAME)
+connect(db=DB_NAME,collection='fs.files')
