@@ -33,6 +33,7 @@ def list(page=0):
             'next_page': next_page,
            }
 
+
 @post('/create')
 def create():
     ''' Save new Image. '''
