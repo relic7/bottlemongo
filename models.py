@@ -14,4 +14,4 @@ class FileF7(Document):
     thumb = FileField()
 
 #connect(db=DB_NAME,collection='fs.files')
-register_connection(conn, name=DB_NAME, collection='fs.files', username='mongo', password='mongo')
+register_connection('default', name=DB_NAME, collection='fs.files', username='mongo', password='mongo')
