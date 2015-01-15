@@ -9,7 +9,7 @@ h2 { margin-bottom: 5px; }
 
 table {
     border: 2px #030736;
-    background: #FFFFF8;
+    background: #d2ddff;
     -moz-box-shadow: 3px 3px 3px silver;
     -webkit-box-shadow: 3px 3px 3px silver;
     box-shadow: 3px 3px 3px silver;
@@ -18,23 +18,23 @@ table td {
     vertical-align: top;
     padding: 5px;
 }
-table#messages {
+table#filesf7 {
     width: 800px;
     border-collapse: collapse;
 }
-table#messages tr {
+table#filesf7 tr {
     height: 60px;
 }
-table#messages td {
+table#filesf7 td {
     border: 1px #030736;
 }
-table#messages td.nickname {
+table#filesf7 td.nickname {
     min-width: 120px;
 }
-table#messages td.text {
+table#filesf7 td.text {
     min-width: 350px;
 }
-table#messages td.date {
+table#filesf7 td.date {
     min-width: 150px;
 }
 
