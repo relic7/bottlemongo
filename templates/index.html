@@ -1,26 +1,26 @@
 {% extends 'base/base.html' %}
- 
+
 {% block extra_js %}
- 
+
 <script type="text/javascript">
 $( document ).ready( function() {
 $( '#searchSubmit' ).click( function() {
 q = $( '#q' ).val();
-$( '#results' ).html( '&nbsp;' ).load( '{% url demo_user_search %}?q=' + q );
+$( '#results' ).html( '&nbsp;' ).load( 'http://127.0.0.1:8080/?q=' + q );
 });
 });
- 
+
 $( document ).ajaxStart( function() {
 $( '#spinner' ).show();
 }).ajaxStop( function() {
 $( '#spinner' ).hide();
 });
 </script>
- 
+
 {% endblock %}
- 
+
 {% block main %}
- 
+
 <div>
 <input id="q" type="text"/>
 <input id="searchSubmit" type="submit" value="Search"/>
