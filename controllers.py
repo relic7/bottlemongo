@@ -32,20 +32,19 @@ db,fs = connect_gridfs_mongodb(hostname=None,db_name=None)
 PAGE_SIZE = 5
 
 @get(['/', '/list', '/list/:page#\d+#'])
-@view('templates/_mako/list.mako')
+@view('templates/base/results.html')
 def list(page=0):
     ''' List files. '''
+    coll = db['fs.files']
     page = int(page)
     prev_page = None
     next_page = None
     if page > 0:
         prev_page = page - 1
-    if db['fs.files'].objects.count() > (page + 1) * PAGE_SIZE:
+    if coll.count() > (page + 1) * PAGE_SIZE:
         next_page = page + 1
-    files = (db['fs.files'].objects
-            .order_by('-uploadDate')
-            .skip(page * PAGE_SIZE)
-            .limit(PAGE_SIZE))
+    i = iter(coll.find())
+    files = i.sort('-uploadDate').skip(page * PAGE_SIZE).limit(PAGE_SIZE)
     return {'files': files,
             'prev_page': prev_page,
             'next_page': next_page,

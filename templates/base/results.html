@@ -1,26 +1,26 @@
-{% extends 'base/base.html' %}
+{% extends 'base.html' %}
 
 {% block results %}
-{% if results|length %}
- 
+{% if files|length %}
+
 <table>
 <tr class='even'>
 <td colspan="3" class="right">
-<strong>Found {{ results|length }} users</strong>
+<strong>Found {{ files|length }} users</strong>
 </td>
 </tr>
- 
-{% for user in results %}
+
+{% for file in files %}
     <tr class="{% cycle 'odd' 'even' %}">
 <td><strong>{{ forloop.counter }}.</strong></td>
 <td>
-{{ user.first_name }} {{ user.last_name }}<br/>
-<span class="hint">{{ user.username }}</span>
+{{ file.filename }} {{ file.md5 }}<br/>
+<span class="hint">{{ file.username }}</span>
 </td>
 <td class="right">
 <span class="hint">
-Joined {{ user.date_joined|timesince }} ago<br/>
-Last logged in {{ user.last_login|timesince }} ago
+Uploaded {{ file.uploadDate|timesince }} ago<br/>
+Last Uploaded in {{ file.uploadDate|timesince }} ago
 </span>
 </td>
 </tr>
@@ -28,7 +28,7 @@ Last logged in {{ user.last_login|timesince }} ago
     </table>
 {% else %}
     <div class="note">
-Your search yielded no results
+Your search yielded no files
 </div>
 {% endif %}
 {% endblock %}
