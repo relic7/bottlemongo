@@ -3,9 +3,9 @@
 {% block content %}
 
 
-{% for result in results %}
+{% for file in files %}
     {% block imagecell %}{% endblock %}
-    {{ result.id }}  <br />
+    {{ file.filename }}  <br />
 {% endfor %}
 
 

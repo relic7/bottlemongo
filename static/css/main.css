@@ -28,7 +28,7 @@ table#filesf7 tr {
 table#filesf7 td {
     border: 1px #030736;
 }
-table#filesf7 td.nickname {
+table#filesf7 td.filename {
     min-width: 120px;
 }
 table#filesf7 td.text {
