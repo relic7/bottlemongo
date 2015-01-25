@@ -13,6 +13,8 @@ class FileF7(Document):
     image = FileField()
     thumb = FileField()
 
+
+
 #connect(db=DB_NAME,collection='fs.files')
 register_connection('default', name=DB_NAME, username='mongo', password='mongo')
 print dir(register_connection)

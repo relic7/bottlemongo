@@ -21,7 +21,28 @@ def connect_gridfs_mongodb(hostname=None,db_name=None):
 
 db,fs = connect_gridfs_mongodb(hostname=None,db_name=None)
 
-@route('/documents', method='PUT')
+
+@route('/list', method='GET')
+def list(page=0):
+    ''' List files. '''
+    page = int(page)
+    prev_page = None
+    next_page = None
+    if page > 0:
+        prev_page = page - 1
+    if len(fs.list) > (page + 1) * PAGE_SIZE:
+        next_page = page + 1
+    files = (db['fs.files'].objects
+            .order_by('-uploadDate')
+            .skip(page * PAGE_SIZE)
+            .limit(PAGE_SIZE))
+    return {'files': files,
+            'prev_page': prev_page,
+            'next_page': next_page,
+            }
+
+
+@route('/filesf7', method='PUT')
 def put_document():
     data = request.body.readline()
     if not data:
@@ -30,13 +51,13 @@ def put_document():
     if not entity.has_key('_id'):
         abort(400, 'No _id specified')
     try:
-        db['documents'].save(entity)
+        db['fs.files'].save(entity)
     except pymongo.ValidationError as ve:
         abort(400, str(ve))
 
-@route('/documents/:id', method='GET')
+@route('/filesf7/:id', method='GET')
 def get_document(id):
-    entity = db['documents'].find_one({'_id':id})
+    entity = db['fs.files'].find_one({'_id':id})
     if not entity:
         abort(404, 'No document with id %s' % id)
     return entity

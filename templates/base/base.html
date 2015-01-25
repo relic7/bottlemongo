@@ -1,18 +1,18 @@
-{% extends '_layouts/base.html' %}
+{% extends 'templates/_layouts/base.html' %}
 {% block title %}Django/jQuery AJAX Search{% endblock %}
 {% block extrajshead %}
-<link href="{{ STATIC_URL }}style.css" rel="stylesheet" type="text/css" />          
+<link href="static/style.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="http://jqueryjs.googlecode.com/files/jquery-1.2.6.js"></script>
- 
+
 {% endblock %}
 
 {% block content %}
 <div id="centered">
- 
+
 {% block main %}
     {% block results %}{% endblock %}
 
 {% endblock %}
- 
+
 </div>
 {% endblock %}

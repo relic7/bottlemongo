@@ -1,34 +1,34 @@
-{% extends "result_list_page.html" %}
+{% extends "templates/base/result_list_page.html" %}
 
 {% block imagecell %}
 {# <div id="container"> #}
-            {# {% block image_results_group_title %}{% endblock %}#}
+            {# {% block image_file_group_title %}{% endblock %}#}
             <table class="table table-bordered table-striped" style="width: 250px;">
 
                 <tbody>
                 <tr>
                     <th> Filename</th>
-                    <td>{{ results.filename }}</td>
+                    <td>{{ file.filename }}</td>
                 </tr>
                 <tr>
                     <th align="left" scope="row"> Object ID</th>
-                    <td>{{ results._id }}</td>
+                    <td>{{ file._id }}</td>
                 </tr>
                 <tr>
                     <th align="left" scope="row"> MD5 Checksum</th>
-                    <td>{{ results.md5 }}</td>
+                    <td>{{ file.md5 }}</td>
                 </tr>
                 <tr>
                     <th align="left" scope="row"> Upload Date</th>
-                    <td>{{ results.uploadDate }}</td>
+                    <td>{{ file.uploadDate }}</td>
                 </tr>
                 <tr>
                     <th align="left" scope="row"> Content Header</th>
-                    <td>{{ results.contentType }}</td>
+                    <td>{{ file.contentType }}</td>
                 </tr>
                 <tr>
                     <th align="left" scope="row"> Metadata</th>
-                    <td>{{ results.metadata }}</td>
+                    <td>{{ file.metadata }}</td>
                 </tr>
                 </tbody>
             </table>
